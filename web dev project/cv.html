@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      margin-bottom: 10px;
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+      font-size: 1.4rem;
+    }
+
+    .info-item {
+      margin-bottom: 15px;
+    }
+
+    .info-item h4 {
+      font-weight: bold;
+      color: #444;
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .skill-bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      height: 20px;
+    }
+
+    .skill-fill {
+      height: 100%;
+      width: 0;
+      background: #3498db;
+      border-radius: 20px;
+      transition: width 1s ease-in-out;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body onload="animateSkills()">
+
+  <div class="container">
+    <header>
+      <h1>Chitra Sharma</h1>
+      <p>Btech Student | chitra27406@gmail.com | +1 234 567 8901</p>
+    </header>
+
+    <section>
+      <h2 class="section-title">About Me</h2>
+      <p>
+        Passionate developer with 5+ months of experience building responsive web applications.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Experience</h2>
+      <div class="info-item">
+        <h4>Made my own portfolio website</h4>
+        <p>National level chess player</p>
+        <p>Professional ballet dancer</p>
+      </div>
+
+
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="info-item">
+        <h4>B.Tech in Computer Science</h4>
+        <p>South Asian University, 2024 - 2028</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <div>
+          <p>HTML & CSS</p>
+          <div class="skill-bar"><div class="skill-fill" data-skill="90%"></div></div>
+        </div>
+        <div>
+          <p>JavaScript</p>
+          <div class="skill-bar"><div class="skill-fill" data-skill="85%"></div></div>
+        </div>
+        <div>
+          <p>React.js</p>
+          <div class="skill-bar"><div class="skill-fill" data-skill="80%"></div></div>
+        </div>
+        <div>
+          <p>Node.js</p>
+          <div class="skill-bar"><div class="skill-fill" data-skill="75%"></div></div>
+        </div>
+        <div>
+          <p>Python</p>
+          <div class="skill-bar"><div class="skill-fill" data-skill="70%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <button class="btn" onclick="downloadResume()">Download Resume</button>
+  </div>
+
+  <script>
+    function animateSkills() {
+      const skillFills = document.querySelectorAll('.skill-fill');
+      skillFills.forEach(fill => {
+        const level = fill.getAttribute('data-skill');
+        setTimeout(() => {
+          fill.style.width = level;
+        }, 300);
+      });
+    }
+
+    function downloadResume() {
+      alert("Resume download feature coming soon!");
+      // You can replace this with actual file link:
+      // window.location.href = 'resume.pdf';
+    }
+  </script>
+</body>
+</html>
